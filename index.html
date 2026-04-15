@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gis Recipes | Delícias em Família</title>
+    <meta name="description" content="Navegue pelas melhores receitas da Gis. Doces, salgados e muito mais com um toque de amor.">
+    
+    <!-- Google Fonts: Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Font Awesome (for social icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- Top Announcement Bar -->
+        <div class="top-bar">
+            <p>✨ Prepare o avental! Novas receitas todos os dias da semana.</p>
+        </div>
+
+        <!-- Middle Header: Logo, Search (placeholder), Socials & Theme -->
+        <div class="header-content container">
+            <div class="logo">
+                <i data-lucide="chef-hat" class="logo-icon"></i>
+                <h1>Gis <span>Recipes</span></h1>
+            </div>
+
+            <div class="search-container">
+                <form id="search-form" class="search-bar">
+                    <input type="text" placeholder="Encontre uma receita..." aria-label="Pesquisar">
+                    <button type="submit"><i data-lucide="search"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <div class="social-links-desktop">
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <button id="theme-toggle" class="icon-btn" aria-label="Alternar Tema">
+                    <i data-lucide="moon" class="moon-icon"></i>
+                    <i data-lucide="sun" class="sun-icon"></i>
+                </button>
+
+                <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Abrir Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active"><i data-lucide="home"></i> Home</a></li>
+                    <li><a href="#receitas"><i data-lucide="utensils"></i> Receitas</a></li>
+                    <li><a href="#categorias"><i data-lucide="layout-grid"></i> Por Categoria</a></li>
+                    <li><a href="#favoritos"><i data-lucide="heart"></i> Favoritos</a></li>
+                    <li><a href="#sobre"><i data-lucide="info"></i> Sobre</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Overlay Menu -->
+        <div id="mobile-overlay" class="mobile-overlay">
+            <button id="close-menu-btn" class="close-btn"><i data-lucide="x"></i></button>
+            <div class="mobile-menu-content">
+                <div class="overlay-logo">
+                    <i data-lucide="chef-hat"></i>
+                    <h2>Gis Recipes</h2>
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="#home"><i data-lucide="home"></i> Home</a></li>
+                    <li><a href="#receitas"><i data-lucide="utensils"></i> Receitas</a></li>
+                    <li><a href="#categorias"><i data-lucide="layout-grid"></i> Por Categoria</a></li>
+                    <li><a href="#favoritos"><i data-lucide="heart"></i> Favoritos</a></li>
+                    <li><a href="#sobre"><i data-lucide="info"></i> Sobre</a></li>
+                </ul>
+                <div class="social-links-mobile">
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home View with Hero -->
+        <section id="home" class="view active-view">
+            <!-- Hero Section: Recipe of the Day -->
+            <div class="hero-banner">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="badge">Receita do Dia</span>
+                    <h2 id="daily-recipe-title">Carregando Receita...</h2>
+                    <p id="daily-recipe-desc">Confira nossa sugestão especial para hoje!</p>
+                    <a href="#receitas" class="cta-btn">Ver Receita Completa</a>
+                </div>
+            </div>
+            
+            <div class="container section-padding">
+                <div class="section-header">
+                    <h2>Bem-vindo ao Gis Recipes</h2>
+                </div>
+            </div>
+        </section>
+        
+        <section id="receitas" class="view section-padding">
+            <div class="container">
+                <div class="breadcrumb" data-view="receitas">Home / Receitas</div>
+                <div class="section-header editorial">
+                    <h2>Receitas</h2>
+                </div>
+                <div id="recipes-grid" class="recipes-grid">
+                    <!-- Recipes will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="categorias" class="view section-padding">
+            <div class="container">
+                <div class="breadcrumb" data-view="categorias">Home / Por Categoria</div>
+                <div class="section-header editorial">
+                    <h2>Receitas por Categoria</h2>
+                </div>
+                
+                <input type="text" id="internal-search" placeholder="Busque por nome nesta categoria..." class="internal-search-input">
+                <div class="category-filters">
+                    <button class="cat-btn active" data-category="all">Todas</button>
+                    <button class="cat-btn" data-category="salgado">Salgados</button>
+                    <button class="cat-btn" data-category="doce">Doces</button>
+                    <button class="cat-btn" data-category="sobremesa">Sobremesas</button>
+                    <button class="cat-btn" data-category="lanche">Lanches</button>
+                </div>
+
+                <div id="category-results" class="recipes-grid">
+                    <!-- Filtered recipes will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="favoritos" class="view section-padding">
+            <div class="container">
+                <div class="breadcrumb" data-view="favoritos">Home / Favoritos</div>
+                <div class="section-header editorial">
+                    <h2>Seus Favoritos</h2>
+                </div>
+                <div id="favorites-grid" class="recipes-grid">
+                    <!-- Favorite recipes will appear here -->
+                </div>
+                <div id="empty-favorites" class="empty-state" style="display: none;">
+                    <i data-lucide="heart" class="empty-icon"></i>
+                    <p>Você ainda não salvou nenhuma receita como favorita.</p>
+                    <a href="#receitas" class="cta-btn secondary">Explorar Receitas</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="view section-padding">
+            <div class="container">
+                <div class="breadcrumb" data-view="sobre">Home / Sobre</div>
+                <div class="section-header editorial">
+                    <h2>Sobre Nós</h2>
+                </div>
+                <div class="about-container">
+                    <div class="about-text">
+                        <h2>Sua cozinha, sua história</h2>
+                        <p>O <strong>Gis Recipes</strong> nasceu da paixão por compartilhar segredos culinários que passam de geração em geração. Oferecemos milhares de receitas atualizadas diariamente para ajudar você em qualquer situação.</p>
+                        <p>Nosso objetivo é facilitar o preparo de pratos incríveis, atendendo tanto iniciantes quanto pessoas com experiência na cozinha. Acreditamos que cozinhar é um ato de amor e queremos que você sinta isso em cada ingrediente.</p>
+                        <p>Aqui você encontra tudo: desde o Strogonoff de domingo até aquela sobremesa especial para uma data importante. Tudo com explicações detalhadas e passo a passo garantindo clareza e bons resultados.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" alt="Cozinha Gisrecipes">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
