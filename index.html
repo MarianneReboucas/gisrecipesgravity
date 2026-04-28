@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gisrecipes - As Melhores Receitas</title>
     <!-- Font Awesome Icons -->
+    <meta name="description" content="Gisrecipes - As melhores receitas em vídeo e texto. Descubra pratos incríveis, doces e salgados, com passo a passo detalhado.">
+    <meta name="keywords" content="receitas, culinária, gastronomia, comida brasileira, doces, salgados">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,8 +15,10 @@
     <header class="top-bar">
         <div class="container">
             <div class="logo-container">
-                <i class="fas fa-utensils"></i>
-                <span>Gisrecipes</span>
+                <a href="#" style="display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-utensils"></i>
+                    <span>Gisrecipes</span>
+                </a>
             </div>
             <div class="social-links">
                 <a href="https://instagram.com" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -27,37 +31,34 @@
     <!-- Menu de Navegação -->
     <nav class="main-nav">
         <div class="container">
-            <!-- Desktop Links -->
             <ul class="nav-links">
                 <li><a href="#" class="nav-item"><i class="fas fa-home"></i> Home</a></li>
                 
                 <li class="nav-item">
-                    <a href="#receitas" style="display: flex; align-items: center; gap: 0.5rem; color: inherit;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: inherit; cursor: pointer;">
                         <i class="fas fa-mortar-pestle"></i> Receitas
                         <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
-                    </a>
+                    </div>
                     <div class="dropdown">
-                        <a href="#receitas" class="dropdown-item">Strogonoff</a>
-                        <a href="#receitas" class="dropdown-item">Bolonhesa</a>
-                        <a href="#receitas" class="dropdown-item">Feijoada</a>
-                        <a href="#receitas" class="dropdown-item">Parmegiana</a>
+                        <a href="#recipe/strogonoff" class="dropdown-item">Strogonoff</a>
+                        <a href="#recipe/bolonhesa" class="dropdown-item">Bolonhesa</a>
+                        <a href="#recipe/feijoada" class="dropdown-item">Feijoada</a>
                         <hr style="border: 0; border-top: 1px solid var(--gray-200); margin: 0.5rem 0;">
-                        <a href="#receitas" class="dropdown-item">Bolos Recheados</a>
-                        <a href="#receitas" class="dropdown-item">Pavê</a>
-                        <a href="#receitas" class="dropdown-item">Pudim</a>
+                        <a href="#recipe/bolo-chocolate" class="dropdown-item">Bolo Recheado</a>
+                        <a href="#recipe/pudim" class="dropdown-item">Pudim</a>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#categorias" style="display: flex; align-items: center; gap: 0.5rem; color: inherit;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: inherit; cursor: pointer;">
                         <i class="fas fa-th-large"></i> Por Categoria
                         <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
-                    </a>
+                    </div>
                     <div class="dropdown">
-                        <a href="#categorias" class="dropdown-item">Salgados</a>
-                        <a href="#categorias" class="dropdown-item">Doces</a>
-                        <a href="#categorias" class="dropdown-item">Sobremesas</a>
-                        <a href="#categorias" class="dropdown-item">Lanches</a>
+                        <a href="#categoria/Salgados" class="dropdown-item">Salgados</a>
+                        <a href="#categoria/Sobremesas" class="dropdown-item">Sobremesas</a>
+                        <a href="#categoria/Massas" class="dropdown-item">Massas</a>
+                        <a href="#categoria/Clássicos da Cozinha" class="dropdown-item">Clássicos da Cozinha</a>
                     </div>
                 </li>
 
@@ -65,7 +66,6 @@
                 <li><a href="#sobre" class="nav-item"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
             </ul>
 
-            <!-- Search and Controls -->
             <div style="display: flex; align-items: center; gap: 1.5rem;">
                 <div class="search-container">
                     <i class="fas fa-search" style="color: var(--primary);"></i>
@@ -76,7 +76,6 @@
                     <i class="fas fa-sun" id="theme-icon"></i>
                 </button>
 
-                <!-- Mobile Hamburger -->
                 <div class="hamburger" id="mobile-toggle">
                     <span></span>
                     <span></span>
@@ -86,81 +85,62 @@
         </div>
     </nav>
 
-    <!-- Destaque Principal (Hero) -->
-    <section class="hero">
-        <img src="hero-recipe.png" alt="Receita do Dia: Strogonoff" class="hero-image">
-        <div class="hero-overlay glass">
-            <span class="badge">Receita do Dia</span>
-            <h1 class="hero-title">Strogonoff de Carne Especial</h1>
-            <p>Aprenda a fazer o clássico strogonoff brasileiro com um toque de chef.</p>
-            <a href="#receitas" class="hero-btn">
-                <i class="fas fa-play-circle"></i> Ver Receita
-            </a>
-        </div>
-    </section>
+    <!-- Dynamic Content Container -->
+    <main id="app-content">
+        <!-- Content will be rendered here via script.js -->
+    </main>
 
-    <!-- Seção de Receitas (Placeholder) -->
-    <section id="receitas" class="container" style="padding: 4rem 1.5rem; border-bottom: 1px solid var(--gray-200);">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
-            <i class="fas fa-utensils" style="color: var(--primary);"></i> Nossas Receitas
-        </h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
-            <!-- Placeholder cards -->
-            <div class="glass" style="padding: 1.5rem; border-radius: 15px;">Strogonoff Clássico</div>
-            <div class="glass" style="padding: 1.5rem; border-radius: 15px;">Bolo de Chocolate</div>
-            <div class="glass" style="padding: 1.5rem; border-radius: 15px;">Feijoada Completa</div>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-container" style="color: var(--primary); margin-bottom: 1.5rem;">
+                        <i class="fas fa-utensils"></i>
+                        <span>Gisrecipes</span>
+                    </div>
+                    <p>Inspirando você a cozinhar momentos inesquecíveis todos os dias.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Explore</h3>
+                    <a href="#">Home</a>
+                    <a href="#categoria/Salgados">Salgados</a>
+                    <a href="#categoria/Sobremesas">Sobremesas</a>
+                    <a href="#categoria/Massas">Massas</a>
+                    <a href="#categoria/Clássicos da Cozinha">Clássicos da Cozinha</a>
+                    <a href="#sobre">Sobre Nós</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@gisrecipes.com.br</p>
+                    <div class="social-links" style="margin-top: 1rem;">
+                        <a href="#" class="btn-icon" style="background: var(--primary); color: white;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn-icon" style="background: var(--primary); color: white;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gisrecipes. Todos os direitos reservados.</p>
+            </div>
         </div>
-    </section>
-
-    <!-- Seção de Categorias (Placeholder) -->
-    <section id="categorias" class="container" style="padding: 4rem 1.5rem; border-bottom: 1px solid var(--gray-200);">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
-            <i class="fas fa-tags" style="color: var(--primary);"></i> Explorar Categorias
-        </h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-            <span class="badge" style="background: var(--primary); padding: 0.75rem 1.5rem; cursor: pointer;">Salgados</span>
-            <span class="badge" style="background: var(--secondary); padding: 0.75rem 1.5rem; cursor: pointer;">Doces</span>
-            <span class="badge" style="background: var(--accent); padding: 0.75rem 1.5rem; cursor: pointer;">Lanches</span>
-            <span class="badge" style="background: var(--primary); padding: 0.75rem 1.5rem; cursor: pointer;">Sobremesas</span>
-        </div>
-    </section>
-
-    <!-- Seção Sobre Nós -->
-    <section id="sobre" class="container" style="padding: 4rem 1.5rem;">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <i class="fas fa-chef-hat" style="font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
-            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Sobre Nós</h2>
-            <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
-                O Gisrecipes oferece milhares de receitas atualizadas diariamente para ajudar você em qualquer situação. Nosso objetivo é facilitar o preparo de pratos incríveis, apoiando tanto iniciantes quanto quem já tem experiência na cozinha. Disponibilizamos receitas em formatos de vídeo e texto, sempre com explicações detalhadas e passo a passo, para garantir praticidade, clareza e bons resultados em cada preparo.
-            </p>
-        </div>
-    </section>
-
-    <!-- Seção Favoritos (Placeholder) -->
-    <section id="favoritos" class="container" style="padding: 4rem 1.5rem; border-top: 1px solid var(--gray-200);">
-        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-            <i class="fas fa-heart" style="color: var(--secondary);"></i> Meus Favoritos
-        </h2>
-        <div id="favorites-list" style="color: var(--text-muted); font-style: italic;">
-            Você ainda não salvou nenhuma receita como favorita.
-        </div>
-    </section>
+    </footer>
 
     <!-- Mobile Menu Modal -->
-    <div id="mobile-menu" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-page); z-index: 2000; padding: 2rem; display: none; flex-direction: column; gap: 2rem; overflow-y: auto;">
+    <div id="mobile-menu" class="mobile-menu-overlay">
         <div style="display: flex; justify-content: flex-end;">
-            <button id="close-mobile" style="background: none; border: none; cursor: pointer;"><i class="fas fa-times" style="font-size: 1.5rem;"></i></button>
+            <button id="close-mobile" class="close-btn"><i class="fas fa-times"></i></button>
         </div>
-        <ul style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.25rem;">
-             <li><a href="#" class="nav-item"><i class="fas fa-home"></i> Home</a></li>
-             <li><a href="#receitas" class="nav-item"><i class="fas fa-mortar-pestle"></i> Receitas</a></li>
-             <li><a href="#categorias" class="nav-item"><i class="fas fa-th-large"></i> Categoria</a></li>
-             <li><a href="#favoritos" class="nav-item"><i class="fas fa-heart"></i> Favoritos</a></li>
-             <li><a href="#sobre" class="nav-item"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+        <ul class="mobile-nav-list">
+             <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+             <li><a href="#categoria/Salgados"><i class="fas fa-mortar-pestle"></i> Salgados</a></li>
+             <li><a href="#categoria/Sobremesas"><i class="fas fa-cake-candles"></i> Sobremesas</a></li>
+             <li><a href="#categoria/Massas"><i class="fas fa-pasta"></i> Massas</a></li>
+             <li><a href="#categoria/Clássicos da Cozinha"><i class="fas fa-fire"></i> Clássicos da Cozinha</a></li>
+             <li><a href="#favoritos"><i class="fas fa-heart"></i> Favoritos</a></li>
+             <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
         </ul>
     </div>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
